@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:33:22 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/07 16:12:02 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/08 01:41:46 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,17 @@ size_t	ft_strlcpy(char	*dst, const char *src, size_t dstsize)
 
 // "" dst  dstsize < 0
 
-/*
+
 #include<stdio.h>
 #include<string.h>
 int main()
 {
 	char dst[20] = "helloii";
 	char src[20] = "world";
-	printf("\n%lu\n",ft_strlcpy(dst, src, 0));
+	printf("\n%lu\n",ft_strlcpy(dst, src, -1));
 	printf("%s\n",dst);
-	char dst1[20] = "helloii";
-	char src1[20] = "world";
-	printf("%lu\n",strlcpy(dst, src1, 0));
-	printf("%s\n",dst1);
-}*/
+	char *dst1 = "helloii";
+	char *src1 = "world";
+//	printf("%lu\n",strlcpy(dst, src1, -1));
+//	printf("%s\n",dst1);
+}

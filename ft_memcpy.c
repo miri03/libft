@@ -1,44 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 17:37:25 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/08 00:08:38 by meharit          ###   ########.fr       */
+/*   Created: 2022/10/07 22:04:22 by meharit           #+#    #+#             */
+/*   Updated: 2022/10/07 22:22:42 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memcpy(void	*dst, const void *src, size_t n)
 {
-	unsigned char q;
-	char *ptr;
 	size_t	i;
+	char *p1;
+	char *p2;
 
+	p1 = (char *)dst;
+	p2 = (char *)src;
 	i = 0;
-	ptr = (char *)b;
-	q = (unsigned char) c;
-	while (len > i)
+	while (i < n)
 	{
-		ptr[i] = q;
+		p1[i] = p2[i];
 		i++;
 	}
-	return (b);
+	return (dst);
 }
 
 #include<stdio.h>
 #include<string.h>
 int main()
 {
-	char ptr[10] = "hello";
-	ft_memset(&ptr[2], 48, 6*sizeof(char));
+	char ptr[20] = "qwerty";
+	ft_memcpy(ptr,"azerty",6);
 	printf("%s\n",ptr);
-	char ptr1[10] = "hello";
-	ft_memset(&ptr1[2], 48, 6*sizeof(char));
+	char ptr1[20] = "qwerty";
+	memcpy(ptr1,"azerty",6);
 	printf("%s\n",ptr1);
-	printf("%d\n",ptr1[7]);
-
 }
+

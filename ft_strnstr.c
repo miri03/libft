@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:35:31 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/06 22:42:52 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/08 22:25:54 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strnstr(const char *hay, const char *need, size_t len)
 				sec++;
 				first++;
 			}
-			if (needle[sec - 1] == '\0')
+			if (needle[sec] == '\0')
 				return (&haystack[first - sec]);
 			sec = 0;
 		}
@@ -41,3 +41,14 @@ char	*ft_strnstr(const char *hay, const char *need, size_t len)
 	}
 	return (NULL);
 }
+
+/*
+#include <stdio.h>
+
+int main()
+{
+
+    char a[] = "gsafqwqwsseqwerlbiyyadi";
+     char b[] = "qwer";
+    printf("%s",ft_strnstr(a,b,20));
+}*/

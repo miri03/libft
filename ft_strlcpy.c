@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:33:22 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/08 01:41:46 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/08 21:54:18 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ size_t	ft_strlcpy(char	*dst, const char *src, size_t dstsize)
 
 // "" dst  dstsize < 0
 
-
+/*
 #include<stdio.h>
 #include<string.h>
 int main()
@@ -44,4 +44,4 @@ int main()
 	char *src1 = "world";
 //	printf("%lu\n",strlcpy(dst, src1, -1));
 //	printf("%s\n",dst1);
-}
+}*/

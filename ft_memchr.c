@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 00:09:43 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/08 00:28:54 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/08 22:23:48 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
+/*
 #include<stdio.h>
 #include<string.h>
 int main()
@@ -38,4 +39,4 @@ int main()
 	printf("%s\n",ft_memchr(ptr, '8', 6));
 	printf("%s\n",memchr(ptr, '8', 6));
 
-}
+}*/

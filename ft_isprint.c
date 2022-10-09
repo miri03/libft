@@ -6,16 +6,13 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:01:28 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/05 17:09:45 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/08 15:30:23 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	unsigned char	i;
-
-	i = (unsigned char) c;
-	if (i >= 32 && i <= 126)
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }

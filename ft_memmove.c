@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 17:37:25 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/08 22:22:38 by meharit          ###   ########.fr       */
+/*   Created: 2022/10/08 16:09:59 by meharit           #+#    #+#             */
+/*   Updated: 2022/10/08 22:24:12 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char q;
-	char *ptr;
+	char *dest;
+	char *sour;
 	size_t	i;
 
+	dest = (char *)dst;
+	sour = (char *)src;
 	i = 0;
-	ptr = (char *)b;
-	q = (unsigned char) c;
-	while (len > i)
+	while (i < len)
 	{
-		ptr[i] = q;
+		dest[i] = sour[i];
 		i++;
 	}
-	return (b);
+	return (dst);
 }
 
 /*
@@ -34,12 +34,12 @@ void	*ft_memset(void *b, int c, size_t len)
 #include<string.h>
 int main()
 {
-	char ptr[10] = "hello";
-	ft_memset(&ptr[2], 48, 6*sizeof(char));
-	printf("%s\n",ptr);
-	char ptr1[10] = "hello";
-	ft_memset(&ptr1[2], 48, 6*sizeof(char));
-	printf("%s\n",ptr1);
-	printf("%d\n",ptr1[7]);
-
+	char dst[] = "oldwxceee";
+	//char src[] = "old weeeeeee";
+	char *tt = ft_memmove(&dst[3], dst, 7);
+	printf("%s\n",tt);
+	char dst1[] = "qwertyuiop";
+	//char src[] = "old weeeee";
+	char *t = memmove(&dst1[3], dst1, 7);
+	printf("%s\n",t);
 }*/

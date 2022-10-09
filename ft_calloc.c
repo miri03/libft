@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 23:17:23 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/08 22:26:34 by meharit          ###   ########.fr       */
+/*   Created: 2022/10/08 17:50:53 by meharit           #+#    #+#             */
+/*   Updated: 2022/10/08 22:23:28 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *ptr)
-{
-	int	len;
+#include"libft.h"
 
-	len = 0;
-	while (ptr[len] != '\0')
-		len++;
-	return (len);
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void *ptr;
+
+	ptr = NULL;
+	ptr = (void *)malloc(sizeof(count * size));
+	if (ptr == NULL)
+		return (ptr);
+	ft_bzero(ptr, count);
+	return (ptr);
 }
 
-char	*ft_strrchr(const char *s, int c)
+/*
+#include<stdio.h>
+int main()
 {
-	char	p;
-	char	*ptr;
-	int	len;
+	char *ptr1 = ft_calloc(5, 4 * sizeof(char));
+	printf("%d\n",ptr1[1]);
 
-	ptr = (char *)s;
-	p = (char)c;	
-	len = ft_strlen(ptr);
-
-	if (p == '\0')
-		return (&ptr[len]);
-	while (len >= 0)
-	{
-		if (ptr[len] == p)
-			return (&ptr[len]);
-		len--;
-	}
-	return (0);
-}
+	char *ptr = calloc(5, 4 * sizeof(char));
+	printf("%d",ptr[1]);
+}*/

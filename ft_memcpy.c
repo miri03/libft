@@ -29,6 +29,7 @@ void	*ft_memcpy(void	*dst, const void *src, size_t n)
 	return (dst);
 }
 
+/*
 #include<stdio.h>
 #include<string.h>
 int main()
@@ -40,4 +41,4 @@ int main()
 	memcpy(NULL, NULL,3);
 	printf("%s\n",ptr1);
 }
-
+*/

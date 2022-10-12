@@ -22,7 +22,7 @@ char	*ft_strnstr(const char *hay, const char *need, size_t len)
 	haystack = (char *)hay;
 	needle = (char *)need;
 	first = 0;
-	if (!needle[0])
+	if (!needle[0] || (haystack == NULL && !len))
 		return (haystack);
 	while (haystack[first])
 	{

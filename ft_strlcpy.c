@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 
 #include"libft.h"
-#include<stdio.h>
+
 size_t	ft_strlcpy(char	*dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
 	i = 0;
-	if ((int)dstsize > 0)
+	if (dstsize)
 	{		
 		while (src[i] != '\0' && i < dstsize - 1)
 		{
@@ -28,20 +28,3 @@ size_t	ft_strlcpy(char	*dst, const char *src, size_t dstsize)
 	}
 	return (ft_strlen(src));
 }
-
-// "" dst  dstsize < 0
-
-/*
-#include<stdio.h>
-#include<string.h>
-int main()
-{
-	char dst[20] = "helloii";
-	char src[20] = "world";
-	printf("\n%lu\n",ft_strlcpy(dst, src, -1));
-	printf("%s\n",dst);
-	char *dst1 = "helloii";
-	char *src1 = "world";
-//	printf("%lu\n",strlcpy(dst, src1, -1));
-//	printf("%s\n",dst1);
-}*/

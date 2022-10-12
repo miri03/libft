@@ -21,24 +21,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	str = (unsigned char *)s;
 	p = (unsigned char) c;
-	while (str[i] != '\0' && n > i)
-	{
-		if (p == str[i])
-			return ((void *)&str[i]);
+	while (str[i] != p && n > i)
 		i++;
-	}
-	if (c == '\0' && str[i] == '\0')
+	if (i < n)
 		return ((void *)&str[i]);
-
 	return (NULL);
 }
-
-/*
-#include<stdio.h>
-#include<string.h>
-int main()
-{
-	char ptr[] = "asdf";
-	printf("%s\n",ft_memchr(ptr, 'd', 3));
-	printf("%s\n",memchr(ptr, 'd', 3));
-}*/

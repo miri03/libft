@@ -12,40 +12,27 @@
 
 #include"libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-
-	char			*sub;
-	unsigned int	i;
+	char	*sub;
+	size_t	i;
 
 	i = 0;
-	sub = NULL;
 	if (s == 0)
-		return(0);
-	if (*s == 0)
-	{
-		sub = (char *)malloc(sizeof(char));
-		*sub = 0;
-	}
-	sub = (char *)malloc(sizeof(char) * (len + 1));
+		return (NULL);
+	if (!*s || start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if (len < ft_strlen(s) - start)
+		sub = (char *)malloc(sizeof(char) * (len + 1));
+	else
+		sub = (char *)malloc(sizeof(char) * (ft_strlen(s) - start + 1));
 	if (sub == NULL)
 		return (NULL);
-	if (start < ft_strlen(s))
+	while (i < len && s[i])
 	{
-		while (i < len)
-		{
-			sub[i] = s[start];
-			i++;
-			start++;
-		}
+		sub[i] = s[start + i];
+		i++;
 	}
 	sub[i] = '\0';
 	return (sub);
 }
-/*
-#include<stdio.h>
-int main()
-{
-	char test[] = "i just want this part #############";
-	printf("%s\n",ft_substr(test, 5, 10));
-}*/

@@ -1,43 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 17:37:25 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/10 22:31:40 by meharit          ###   ########.fr       */
+/*   Created: 2022/10/11 19:24:09 by meharit           #+#    #+#             */
+/*   Updated: 2022/10/12 01:24:13 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
+#include<stdio.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned char q;
-	char *ptr;
-	size_t	i;
+	char	*ptr;
+	int		i;
+	int		j;
 
 	i = 0;
-	ptr = (char *)b;
-	q = (unsigned char) c;
-	while (len > i)
+	j = 0;
+	ptr = NULL;
+	if (s1 == 0)
+		return (0);
+	ptr = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (ptr == NULL)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		ptr[i] = q;
+		ptr[i] = s1[i];
 		i++;
 	}
-	return (b);
+	while (s2[j] != '\0')
+	{
+		ptr[i] = s2[j];
+		i++;
+		j++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
 }
-
 /*
 #include<stdio.h>
-#include<string.h>
 int main()
 {
-	char ptr[10] = "hello";
-	ft_memset(&ptr[2], '0', 6*sizeof(char));
-	printf("%s\n",ptr);
-	char ptr1[10] = "hello";
-	ft_memset(&ptr1[2], '0', 6*sizeof(char));
-	printf("%s\n",ptr1);
+	printf("%s\n",ft_strjoin("hello","world"));
 }*/

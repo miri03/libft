@@ -6,24 +6,29 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:47:54 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/08 15:35:25 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/11 17:45:01 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
+#include<limits.h>
+#include<stdio.h>
+
 
 int	ft_atoi(const char *str)
 {
-	long	result;
+	long result;
 	int	i;
 	int	sign;
 
 	i = 0;
 	sign = 1;
 	result = 0;
-	if (str[0] == '-' || str[0] == '+')
+	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[0] == '-')
+		if (str[i] == '-')
 			sign *= -1;
 		i++;
 	}
@@ -34,13 +39,11 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-
 /*
 #include<stdio.h>
 #include<stdlib.h>
 int main()
 {
-	printf("%d\n",ft_atoi("-8452354"));
-	printf("%d\n",atoi("-8452354"));
-}
-*/
+	printf("\n%d\n",ft_atoi("9223372036854775807"));
+	printf("%d\n",atoi("9223372036854775807"));
+}*/

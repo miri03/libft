@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 16:12:11 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/07 17:36:28 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/12 00:43:07 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,40 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	size_t	len;
 
-	len = ft_strlen(dst);
-	i = ft_strlen(dst);
 	j = 0;
-	while (src[j] != '\0' && dstsize > len + 1 + j)
+	i = 0;
+	//if (dst == NULL && dstsize == 0)
+	//	return(ft_strlen(src));
+	len = 0;
+
+	while (len < dstsize && dst[len])
+		len++;
+
+	if (len - 1 == dstsize)
+		return (len + ft_strlen(src));
+	while (src[j] != '\0' && (len + 1 + j) < dstsize)
 	{
-		dst[i] = src[j];
+	//	i = ft_strlen(dst);
+		dst[len + j] = src[j];
 		j++;
-		i++;
 	}
-	if (len > dstsize)
-		return (ft_strlen(src) + dstsize);
+//	if (len > dstsize)
+//		return (ft_strlen(src) + dstsize);
 	if (len < dstsize)
-		dst[i] = '\0';
+		dst[len + j] = '\0';
 	return (len + ft_strlen(src));
 }
+/*
+#include<string.h>
+#include<stdio.h>
+
+int main()
+{
+	char dst[] = "edcfvgbhjnjk";
+	printf("mine:%lu\n",ft_strlcat(dst, "", ft_strlen(dst)+1));
+	printf("dst mine:%s\n",dst);
+
+	char dst1[] = "edcfvgbhjnjk";
+	printf("func:%lu\n",strlcat(dst1, "", ft_strlen(dst1)+1));
+	printf("dst func:%s\n",dst1);
+}*/

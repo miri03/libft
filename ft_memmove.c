@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 16:09:59 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/08 22:24:12 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/12 00:45:04 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,13 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 #include<string.h>
 int main()
 {
-	char dst[] = "oldwxceee";
-	//char src[] = "old weeeeeee";
-	char *tt = ft_memmove(&dst[3], dst, 7);
+	char dst[12] = "hello";
+	char src[] = "qwerty";
+	char *tt = ft_memmove(&dst[4], dst, 7);
 	printf("%s\n",tt);
-	char dst1[] = "qwertyuiop";
-	//char src[] = "old weeeee";
-	char *t = memmove(&dst1[3], dst1, 7);
+	char dst1[12] = "helloqwerty";
+	char src1[] = "qwerty";
+	char *t = memmove(&dst1[4], dst1, 8);
 	printf("%s\n",t);
-}*/
+}
+*/

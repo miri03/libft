@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 00:29:36 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/13 00:37:19 by meharit          ###   ########.fr       */
+/*   Created: 2022/10/13 00:58:27 by meharit           #+#    #+#             */
+/*   Updated: 2022/10/13 01:15:51 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_size(int n)
 {
-	size_t	i;
-	unsigned char	*p1;
-	unsigned char	*p2;
+	int	size;
 
-	p1 = (unsigned char *)s1;
-	p2 = (unsigned char *)s2;
-	i = 0;
-	while (n > i)
-	{
-		if (p1[i] != p2[i])
-			return (p1[i] - p2[i]);
-		i++;
-	}
-	return (0);
-}
+	size = 0;
+	if (n < 0)
+		size++;
 
-#include<stdio.h>
-int main()
+
+char *ft_itoa(int n)
 {
-	char *s1;
-	s1[0]= -128;
-	char *s2;
-	s2[0]= 0;
-	printf("%d",ft_memcmp(s1,s2,1));
-}
+	char	*ptr;
+	int		size;
+
+	size = ft_size(n);
+	ptr = (char *)malloc(sizeof(char) * (size + 1));
+	if (n < 0)
+		ptr[0] = '-';
+
+

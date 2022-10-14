@@ -6,13 +6,13 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:02:07 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/13 00:57:57 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/13 18:35:49 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-#include<stdio.h>
+//#include<stdio.h>
 
 int	count_delim(const char *s, char c)
 {
@@ -55,7 +55,7 @@ char	*ft_string(char const *string, char c)
 		i++;
 	}
 	str[i] = '\0';
-	printf("%s\n", str);
+	//printf("%s\n", str);
 	return (str);
 }
 
@@ -87,14 +87,14 @@ char **ft_split(char const *s, char c)
 	//	printf("full:%s\n",&s[skip]);
 		ptr[i] = ft_string(&s[skip], c);
 		skip += ft_skip(&s[skip], c);
-		printf("skip:%d\n",skip);
+	//	printf("skip:%d\n",skip);
 	//	printf("skip%d\n",skip);
 		i++;
 	}
 	ptr[i] = NULL;
 	return (ptr);
 }
-
+/*
 #include<stdio.h>
 int main()
 {
@@ -105,4 +105,4 @@ int main()
 //		printf("%s\n",ptr[i]);
 //		i++;
 //	}
-}
+}*/

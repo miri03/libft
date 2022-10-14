@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 00:29:36 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/13 16:32:09 by meharit          ###   ########.fr       */
+/*   Created: 2022/10/14 01:15:37 by meharit           #+#    #+#             */
+/*   Updated: 2022/10/14 03:16:58 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	unsigned char	*p1;
-	unsigned char	*p2;
+	char	*ptr;
+	int		i;
 
-	p1 = (unsigned char *)s1;
-	p2 = (unsigned char *)s2;
 	i = 0;
-	while (n > i)
+	ptr = NULL;
+	if (!s)
+	   return (NULL);	
+	ptr = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (ptr == NULL)
+		return (NULL);
+	while (s[i])
 	{
-		if (p1[i] != p2[i])
-			return (p1[i] - p2[i]);
+		ptr[i] = f(i, s[i]);
 		i++;
 	}
-	return (0);
+	ptr[i] = '\0';
+	return (ptr);
 }
-
 /*
-#include<stdio.h>
-int main()
+char	f(unsigned int i, char st)
 {
-	char *s1;
-	s1[0]= -128;
-	char *s2;
-	s2[0]= 0;
-	printf("%d",ft_memcmp(s1,s2,1));
+	char	s;
+
+	s = st + i;
+	return (s);
 }*/

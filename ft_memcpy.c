@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:04:22 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/12 21:30:44 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/13 23:47:29 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,33 @@ void	*ft_memcpy(void	*dst, const void *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		*((char *)(dst + i)) = *((char *)(src + i));
+		*((unsigned char *)(dst + i)) = *((unsigned char *)(src + i));
 		i++;
 	}
 	return (dst);
 }
+
 /*
 #include<stdio.h>
 #include<string.h>
 int main()
 {
 	char ptr[20] = "abc";
-	ft_memcpy(ptr, ptr+3, 2);
+	ft_memcpy(ptr, ptr+2, 2);
 	printf("mine:%s\n",ptr);
 	char ptr1[20] = "abc";
-	memcpy(ptr1, ptr1+3, 2);
+	memcpy(ptr1, ptr1+2, 2);
 	printf("func:%s\n",ptr1);
+	
+	int arr[10] = {1,5,6,8};
+	int dest[10] = {2,9,8};
+	int i;
+	i = 0;
+	ft_memcpy(dest, arr, 12);
+	while ( i < 5)
+	{
+		printf("%i, ", dest[i]);
+		i++;
+	}
+	return(0);
 }*/

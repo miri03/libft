@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:19:48 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/12 18:47:31 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/13 17:15:51 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ char	*alloc(char const *str, char const *set)
 		len--;
 	}
 	ptr = (char *)malloc(sizeof(char) * (ft_strlen(str) - size + 1));
+	if (!ptr)
+		return (NULL);
 	return (ptr);
 }
 
@@ -57,10 +59,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		len;
 	int		start;
 
+	if (!s1 || !set)
+		return (NULL);
 	len = ft_strlen(s1);
 	start = 0;
-	if (s1 == 0)
-		return (0);
+//	if (s1 == 0)
+//		return (0);
 	ptr = alloc(s1, set);
 	if (ptr == NULL)
 		return (NULL);

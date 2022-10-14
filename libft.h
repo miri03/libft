@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 22:31:10 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/14 01:44:28 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/14 23:05:13 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ char **ft_split(char const *s, char c);
 char **ft_split(char const *s, char c);
 char *ft_itoa(int n);
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void ft_striteri(char *s, void (*f)(unsigned int, char*));
+void ft_putchar_fd(char c, int fd);
 
 #endif

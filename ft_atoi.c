@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:47:54 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/13 18:32:48 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/14 20:08:48 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ int	ft_atoi(const char *str)
 			return (0) ;
 		i++;
 	}
-	return ((int)((int)result * sign));
+	return (((int)result * sign));
 }
-
+/*
 #include<stdio.h>
 #include<stdlib.h>
-/*
+
 int main(int ac, char **av)
 {
 	printf("\n%d\n",ft_atoi(av[1]));
 	printf("%d\n", atoi(av[2]));
-} */
+}*/

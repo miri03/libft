@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:02:07 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/13 18:35:49 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/14 17:07:58 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_string(char const *string, char c)
 	{
 		len++;
 	}
-	str = (char *)malloc(sizeof(char) * (len + 1));
+	str = (char *)malloc(sizeof(char) * (len + 1)); //1?
 	if (str == NULL)
 		return (NULL);
 	while (len > i)

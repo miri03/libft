@@ -6,7 +6,7 @@
 #    By: meharit <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/08 20:54:32 by meharit           #+#    #+#              #
-#    Updated: 2022/10/14 23:05:26 by meharit          ###   ########.fr        #
+#    Updated: 2022/10/15 19:07:21 by meharit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ CFILES = ft_bzero.c \
 
 OBJ = $(CFILES:.c=.o)
 RM = rm -f
-LIBC = ar rc
+LIBC = ar -rc
 NAME = libft.a
 
 all : $(NAME)
@@ -57,12 +57,9 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	$(LIBC) $(NAME) $(OBJ)
 
-#%.o : %.c
-#	$(CC) $(CFLAGS) -o $@ -c $<
+${OBJ} :  $(CFILES)
 
-${OBJ} :
-	$(CC) $(CFLAGS) -c $(CFILES)
-
+	$(CC) $(CFLAGS) -c $?
 clean :
 	$(RM) $(OBJ)
 fclean: clean

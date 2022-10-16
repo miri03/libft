@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:37:25 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/10 22:31:40 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/16 21:46:42 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	*ft_memset(void *b, int c, size_t len)
 int main()
 {
 	char ptr[10] = "hello";
-	ft_memset(&ptr[2], '0', 6*sizeof(char));
-	printf("%s\n",ptr);
+	ft_memset(NULL, '0', 6*sizeof(char));
+//	printf("%s\n",ptr);
 	char ptr1[10] = "hello";
-	ft_memset(&ptr1[2], '0', 6*sizeof(char));
-	printf("%s\n",ptr1);
+//	memset(NULL, '0', 6*sizeof(char));
+//	printf("%s\n",ptr1);
 }*/

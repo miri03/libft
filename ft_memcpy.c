@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:04:22 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/13 23:47:29 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/15 16:26:27 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,27 +27,16 @@ void	*ft_memcpy(void	*dst, const void *src, size_t n)
 	return (dst);
 }
 
+
 /*
-#include<stdio.h>
 #include<string.h>
+#include<stdio.h>
 int main()
 {
-	char ptr[20] = "abc";
-	ft_memcpy(ptr, ptr+2, 2);
-	printf("mine:%s\n",ptr);
-	char ptr1[20] = "abc";
-	memcpy(ptr1, ptr1+2, 2);
-	printf("func:%s\n",ptr1);
-	
-	int arr[10] = {1,5,6,8};
-	int dest[10] = {2,9,8};
-	int i;
-	i = 0;
-	ft_memcpy(dest, arr, 12);
-	while ( i < 5)
-	{
-		printf("%i, ", dest[i]);
-		i++;
-	}
-	return(0);
+	char string[] = "0123456789";
+	char string1[] = "0123456789";
+	printf("mine: %s\n",ft_memcpy(&string[5], &string[3], 5));
+	printf("func: %s\n",memcpy(&string1[5], &string[3], 5));
+	printf("s: %s\n",string);
+	printf("s1: %s\n", string1);
 }*/

@@ -11,29 +11,36 @@
 /* ************************************************************************** */
 
 #include"libft.h"
-//#include<stdio.h>
+#include<stdio.h>
 
 static int	ft_size(char const *s, char c)
 {
 	int	i;
-	int	delim;
+	int	word;
 
-	delim = 0;
+	word = 0;
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 	{
-		if(s[i] == c)
-		{
-			while (s[i] && s[i] == c)
-				i++;
-			if (s[i])
-				delim++;
-		}
-		i++;
+		/*if(s[i] == c)
+		  {
+		  delim++;
+		  while (s[i] && s[i] == c)
+		  i++;
+		  }
+		  i++;*/
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i])
+			word++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
-	if (s[0] != c)
-		delim++;
-	return (delim);
+	/*	if (s[0] != c)
+		delim++;*/
+	return (word);
 }
 
 static char*	ft_word(char const  *s, int size)
@@ -59,17 +66,20 @@ char **ft_split(char const *s, char c)
 	int	j;
 	int	alloc;
 	int	i;
-	
+
 	i = 0;
 	j = 0;
 	size  = ft_size(s, c);
 	result = (char **)malloc(sizeof(char *) * (size + 1)); // +1
-	if (result == NULL)
-		return (NULL);
+	if (s == NULL || result == NULL)
+	{
+		result[i] = NULL;
+		return (result);
+	}
 	while (s[j])
 	{
 		alloc = 0;
-		while (s[j] == c && s[j])
+		while (s[j] && s[j] == c)
 			j++;
 		while (s[j+alloc] != c && s[j+alloc])
 			alloc++;
@@ -80,14 +90,14 @@ char **ft_split(char const *s, char c)
 		j+=alloc;
 	}
 
-//	i--;
+	//	i--;
 	result[i] = 0;
-//	i = 0;
-//	while (i < 6)
-//	{
-//		printf("%s\n",result[i]);
-//		i++;
-//	}
+	//	i = 0;
+	//	while (i < 6)
+	//	{
+	//		printf("%s\n",result[i]);
+	//		i++;
+	//	}
 	return (result);
 }
 
@@ -95,7 +105,7 @@ char **ft_split(char const *s, char c)
 int main()
 {
 	int i = 0;
-	char **ptr = ft_split("      split       this for   me  !", ' ');
+	char **ptr = ft_split(NULL, '*');
 	while (i < 6)
 	{
 		printf("%s\n",ptr[i]);

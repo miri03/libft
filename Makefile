@@ -10,8 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
+NAME = libft.a
+
 CC = gcc
+
 CFLAGS = -Wall -Wextra -Werror
+
 CFILES = ft_bzero.c \
 	 ft_atoi.c \
 	 ft_isalpha.c \
@@ -50,16 +54,15 @@ CFILES = ft_bzero.c \
 OBJ = $(CFILES:.c=.o)
 RM = rm -f
 LIBC = ar -rc
-NAME = libft.a
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
 	$(LIBC) $(NAME) $(OBJ)
 
-${OBJ} :  $(CFILES)
+$(OBJ) :  $(CFILES)
+	$(CC) $(CFLAGS) -c $(CFILES)
 
-	$(CC) $(CFLAGS) -c $?
 clean :
 	$(RM) $(OBJ)
 fclean: clean

@@ -1,4 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/17 18:46:32 by meharit           #+#    #+#             */
+/*   Updated: 2022/10/17 22:24:48 by meharit          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"libft.h"
+//#include<stdio.h>
+
 static int	ft_size(char const *s, char c)
 {
 	int	i;
@@ -22,7 +36,7 @@ static int	ft_size(char const *s, char c)
 	return (delim);
 }
 
-static char*	ft_word(char const  *s, char c, int size)
+static char*	ft_word(char const  *s, int size)
 {
 	char	*word;
 	int	i;
@@ -49,33 +63,40 @@ char **ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	size  = ft_size(s, c);
-	result = (char **)malloc(sizeof(char) * (size + 1));
+	result = (char **)malloc(sizeof(char *) * (size + 1)); // +1
 	if (result == NULL)
 		return (NULL);
 	while (s[j])
 	{
 		alloc = 0;
-		while (s[j] == c)
+		while (s[j] == c && s[j])
 			j++;
-		while (s[j+alloc] != c)
+		while (s[j+alloc] != c && s[j+alloc])
 			alloc++;
-		result[i] = ft_word(&s[j], c, alloc);
+		result[i] = ft_word(&s[j],alloc);
 		if (result[i] == NULL)
 			free(result);
 		i++;
 		j+=alloc;
 	}
-	result[i] = NULL;
+
+//	i--;
+	result[i] = 0;
+//	i = 0;
+//	while (i < 6)
+//	{
+//		printf("%s\n",result[i]);
+//		i++;
+//	}
 	return (result);
 }
-
 
 #include<stdio.h>
 int main()
 {
 	int i = 0;
-	char **ptr = ft_split("****hello***split* this*!*", '*');
-	while (i < 5)
+	char **ptr = ft_split("      split       this for   me  !", ' ');
+	while (i < 6)
 	{
 		printf("%s\n",ptr[i]);
 		i++;

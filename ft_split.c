@@ -1,108 +1,81 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 20:02:07 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/16 23:48:04 by meharit          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include"libft.h"
-
-#include<stdio.h>
-
-int	count_delim(const char *s, char c)
+static int	ft_size(char const *s, char c)
 {
-	int	delim;
 	int	i;
+	int	delim;
 
 	delim = 0;
 	i = 0;
-	if (s[0] == c)
-		delim--;
 	while (s[i])
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i - 1] == c)
-			delim++;
+		if(s[i] == c)
+		{
+			while (s[i] && s[i] == c)
+				i++;
+			if (s[i])
+				delim++;
+		}
 		i++;
 	}
-	if (s[i - 1] == c)
-	   delim--;	
-	return (delim + 1);
+	if (s[0] != c)
+		delim++;
+	return (delim);
 }
 
-char	*ft_string(char const *string, char c, int *skip)
+static char*	ft_word(char const  *s, char c, int size)
 {
-	char	*str;
-	int		len;
-	int		i;
-	int		j;
+	char	*word;
+	int	i;
 
-	j = 0;
 	i = 0;
-	len = 0;
-	if (len == 0 && string[0] == c)
+	word = (char *)malloc(sizeof(char) * (size + 1));
+	while (size > i)
 	{
-		while (string[len] && string[len] == c)
-		{
-			len++;
-			j++;
-		}
-	}
-	while (string[len] && string[len] != c)
-		len++;
-	while ( string[len + j] && string[len + j] == c)
-		j++;
-//	printf("%d	", j);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (str == NULL)
-		return (NULL);
-	while (len > i)
-	{
-		str[i] = string[i];
+		word[i] = s[i];
 		i++;
 	}
-	printf("j=%d\n",j);
-	*skip = len + j;
-//	printf("%s\n",str);
-	str[i] = '\0';
-	return (str);
+	word[i] = '\0';
+	return (word);
 }
 
 char **ft_split(char const *s, char c)
 {
-	int	i;
-	char **ptr;
-	int skip;
+	char **result;
 	int	size;
-
-	size = count_delim(s, c);
+	int	j;
+	int	alloc;
+	int	i;
+	
 	i = 0;
-//	printf("%d\n",size); //delim start & end
-	ptr = (char **)malloc(sizeof(char *) * (size + 1));
-	if (ptr == NULL)
+	j = 0;
+	size  = ft_size(s, c);
+	result = (char **)malloc(sizeof(char) * (size + 1));
+	if (result == NULL)
 		return (NULL);
-	while (i < size)
+	while (s[j])
 	{
-		ptr[i] = ft_string(s, c, &skip);
-		s += skip;
+		alloc = 0;
+		while (s[j] == c)
+			j++;
+		while (s[j+alloc] != c)
+			alloc++;
+		result[i] = ft_word(&s[j], c, alloc);
+		if (result[i] == NULL)
+			free(result);
 		i++;
+		j+=alloc;
 	}
-	ptr[i] = NULL;
-	return (ptr);
+	result[i] = NULL;
+	return (result);
 }
+
 
 #include<stdio.h>
 int main()
 {
 	int i = 0;
-	char **ptr = ft_split("**split*******this*for***me**!", '*');
- 	while (i < 5)
+	char **ptr = ft_split("****hello***split* this*!*", '*');
+	while (i < 5)
 	{
 		printf("%s\n",ptr[i]);
 		i++;

@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 23:17:23 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/10 19:12:06 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/18 21:13:34 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ char	*ft_strrchr(const char *s, int c)
 	char	*ptr;
 
 	ptr = (char *)s;
-	p = (char)c;	
+	p = (char)c;
 	len = ft_strlen(s);
-
 	if (p == '\0')
 		return (&ptr[len]);
 	while (len >= 0)

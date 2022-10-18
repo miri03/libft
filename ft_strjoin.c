@@ -6,14 +6,13 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 19:24:09 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/12 18:47:42 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/18 21:03:57 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-#include<stdio.h>
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ptr;
 	int		i;
@@ -41,9 +40,3 @@ char *ft_strjoin(char const *s1, char const *s2)
 	ptr[i] = '\0';
 	return (ptr);
 }
-/*
-#include<stdio.h>
-int main()
-{
-	printf("%s\n",ft_strjoin("hello","world"));
-}*/

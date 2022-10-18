@@ -6,22 +6,19 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 00:58:27 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/13 17:08:16 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/18 20:27:27 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include<stdio.h>
 #include"libft.h"
 
-int	ft_size(int n)
+int	ft_size(long n)
 {
 	int	size;
 
 	size = 0;
 	if (n == 0)
 		return (1);
-	if (n == -2147483648)
-		return (11);
 	if (n < 0)
 	{
 		size++;
@@ -35,54 +32,31 @@ int	ft_size(int n)
 	return (size);
 }
 
-
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*ptr;
 	int		size;
 	int		i;
+	long	nb;
 
+	nb = (long) n;
 	i = 0;
-	size = ft_size(n);
+	size = ft_size(nb);
 	ptr = (char *)malloc(sizeof(char) * (size + 1));
 	if (ptr == NULL)
 		return (NULL);
 	ptr[size] = '\0';
-//	printf("size->%d\n",size);
-	if (n < 0)
+	if (nb < 0)
 	{
 		i++;
 		ptr[0] = '-';
-		n *= -1;	
-	//	n += 1;
-	//	printf("n->%d\n",n);
-	}
-	if (n  == -2147483648)
-	{
-	//	printf("1\n");
-		n += 1;
-		n *= -1;
-		ptr[0] = '-';
-		ptr[size - 1] = '8';
-		size--;
-		n = n / 10;
-	//	printf("n->%d\n size-> %d",n,size);
+		nb *= -1;
 	}
 	while (i <= size - 1)
 	{
-		ptr[size - 1] = (n % 10) + '0';
-	//	printf("%c  ",ptr[size - 1]);
-		n = n / 10;
+		ptr[size - 1] = (nb % 10) + '0';
+		nb = nb / 10;
 		size--;
 	}
 	return (ptr);
 }
-
-/*
-#include<limits.h>
-#include<stdio.h>
-int main()
-{
-	printf("%s\n",ft_itoa(-0));
-//	printf("%d\n",INT_MIN);
-}*/

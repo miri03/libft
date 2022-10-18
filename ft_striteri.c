@@ -6,18 +6,17 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 16:23:30 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/15 15:09:06 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/18 21:07:32 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-#include<stdio.h>
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	i;
 
-	if ( s != NULL)
+	if (s != NULL)
 	{	
 		i = 0;
 		while (s[i])
@@ -27,18 +26,3 @@ void ft_striteri(char *s, void (*f)(unsigned int, char*))
 		}
 	}
 }
-
-
-/*
-void	f(unsigned int i, char *str)
-{
-	str[0] = str[0] + i;
-}
-
-#include<stdio.h>
-int main()
-{
-	char str[] = "hello";
-	ft_striteri(str, f);
-	printf("\n%s",str);
-}*/

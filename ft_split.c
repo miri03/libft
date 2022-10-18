@@ -6,12 +6,11 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 18:46:32 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/17 22:24:48 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/18 22:33:16 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-#include<stdio.h>
 
 static int	ft_size(char const *s, char c)
 {
@@ -23,14 +22,7 @@ static int	ft_size(char const *s, char c)
 	if (!s)
 		return (0);
 	while (s[i])
-	{
-		/*if(s[i] == c)
-		  {
-		  delim++;
-		  while (s[i] && s[i] == c)
-		  i++;
-		  }
-		  i++;*/
+	{	
 		while (s[i] && s[i] == c)
 			i++;
 		if (s[i])
@@ -38,15 +30,13 @@ static int	ft_size(char const *s, char c)
 		while (s[i] && s[i] != c)
 			i++;
 	}
-	/*	if (s[0] != c)
-		delim++;*/
 	return (word);
 }
 
-static char*	ft_word(char const  *s, int size)
+static char	*ft_word(char const *s, int size)
 {
 	char	*word;
-	int	i;
+	int		i;
 
 	i = 0;
 	word = (char *)malloc(sizeof(char) * (size + 1));
@@ -59,56 +49,58 @@ static char*	ft_word(char const  *s, int size)
 	return (word);
 }
 
-char **ft_split(char const *s, char c)
+void	error_free(char **result, int i)
 {
-	char **result;
-	int	size;
-	int	j;
-	int	alloc;
-	int	i;
+	while (i >= 0)
+	{
+		free(result[i]);
+		i--;
+	}
+}
+
+void	ft_alloc(char **result, char const *s, char c, int size)
+{
+	int		alloc;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
-	size  = ft_size(s, c);
-	result = (char **)malloc(sizeof(char *) * (size + 1)); // +1
-	if (s == NULL || result == NULL)
-	{
-		result[i] = NULL;
-		return (result);
-	}
-	while (s[j])
+	while (s[j] && i < size)
 	{
 		alloc = 0;
 		while (s[j] && s[j] == c)
 			j++;
-		while (s[j+alloc] != c && s[j+alloc])
+		while (s[j + alloc] && s[j + alloc] != c)
 			alloc++;
-		result[i] = ft_word(&s[j],alloc);
+		result[i] = ft_word(&s[j], alloc);
 		if (result[i] == NULL)
+		{
+			error_free(result, i);
 			free(result);
+		}
 		i++;
-		j+=alloc;
+		j += alloc;
 	}
-
-	//	i--;
-	result[i] = 0;
-	//	i = 0;
-	//	while (i < 6)
-	//	{
-	//		printf("%s\n",result[i]);
-	//		i++;
-	//	}
-	return (result);
+	result[i] = NULL;
 }
 
-#include<stdio.h>
-int main()
+char	**ft_split(char const *s, char c)
 {
-	int i = 0;
-	char **ptr = ft_split(NULL, '*');
-	while (i < 6)
+	char	**result;
+	int		size;
+	int		j;
+	int		i;
+
+	i = 0;
+	j = 0;
+	size = ft_size(s, c);
+	result = (char **)malloc(sizeof(char *) * (size + 1));
+	if (s == NULL || result == NULL)
 	{
-		printf("%s\n",ptr[i]);
-		i++;
+		free(result);
+		return (NULL);
 	}
+	ft_alloc(result, s, c, size);
+	return (result);
 }

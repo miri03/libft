@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 16:27:47 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/16 18:55:36 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/18 20:30:31 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-
-
-#include<stdio.h>
-#include<string.h>
-int main()
-{
-//	printf("%s\n",ft_memmove(NULL, NULL, 0));
-//	printf("%s\n",memmove(NULL,NULL,0));
-}
-
-
-	/*
-{	char dst[12] = "0123456789";
-	char src[] = "fghjkl";
-	char *tt = ft_memmove(&dst[5], src, 5);
-//	printf("%s\n",tt);
-	char dst1[12] = "0123456789";
-	char *t = memmove(&dst1[5], src, 5);
-//	printf("%s\n",t);
-}*/

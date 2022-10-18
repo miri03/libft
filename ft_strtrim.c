@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:19:48 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/13 17:15:51 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/18 21:15:25 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	len = ft_strlen(s1);
 	start = 0;
-//	if (s1 == 0)
-//		return (0);
 	ptr = alloc(s1, set);
 	if (ptr == NULL)
 		return (NULL);
@@ -82,10 +80,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ptr[i] = '\0';
 	return (ptr);
 }
-/*
-#include<stdio.h>
-int main()
-{
-	printf("%s\n",ft_strtrim("ABBABCB","ABC"));
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 00:29:36 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/13 16:32:09 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/18 20:28:47 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*p1;
 	unsigned char	*p2;
 
@@ -29,14 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-/*
-#include<stdio.h>
-int main()
-{
-	char *s1;
-	s1[0]= -128;
-	char *s2;
-	s2[0]= 0;
-	printf("%d",ft_memcmp(s1,s2,1));
-}*/

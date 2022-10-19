@@ -6,7 +6,7 @@
 #    By: meharit <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/08 20:54:32 by meharit           #+#    #+#              #
-#    Updated: 2022/10/17 23:07:00 by meharit          ###   ########.fr        #
+#    Updated: 2022/10/19 02:23:17 by meharit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,11 +51,17 @@ CFILES = ft_bzero.c \
 	 ft_putendl_fd.c \
 	 ft_putnbr_fd.c \
 
+CBONUS = ft_lstnew.c \
+		 ft_lsadd_front.c \
+			
+
 OBJ = $(CFILES:.c=.o)
 RM = rm -f
 LIBC = ar -rc
 
 all : $(NAME)
+
+bonus : all
 
 $(NAME) : $(OBJ)
 	$(LIBC) $(NAME) $(OBJ)

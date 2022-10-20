@@ -89,11 +89,11 @@ char	**ft_split(char const *s, char c)
 {
 	char	**result;
 	int		size;
-	int		j;
-	int		i;
+//	int		j;
+//	int		i;
 
-	i = 0;
-	j = 0;
+//	i = 0;
+//	j = 0;
 	size = ft_size(s, c);
 	result = (char **)malloc(sizeof(char *) * (size + 1));
 	if (s == NULL || result == NULL)

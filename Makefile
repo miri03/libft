@@ -16,7 +16,8 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-CFILES = ft_bzero.c \
+CFILES = ft_lsadd_front.c \
+	 ft_bzero.c \
 	 ft_atoi.c \
 	 ft_isalpha.c \
 	 ft_isdigit.c \
@@ -50,10 +51,7 @@ CFILES = ft_bzero.c \
 	 ft_putstr_fd.c \
 	 ft_putendl_fd.c \
 	 ft_putnbr_fd.c \
-
-CBONUS = ft_lstnew.c \
-		 ft_lsadd_front.c \
-			
+	 ft_lstnew.c \
 
 OBJ = $(CFILES:.c=.o)
 RM = rm -f

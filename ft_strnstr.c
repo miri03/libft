@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:35:31 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/11 02:51:52 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/20 23:28:56 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strnstr(const char *hay, const char *need, size_t len)
 	haystack = (char *)hay;
 	needle = (char *)need;
 	first = 0;
-	if (!needle[0] || (haystack == NULL && !len))
+	if (!needle[0] || (haystack == NULL && len == 0))
 		return (haystack);
 	while (haystack[first])
 	{

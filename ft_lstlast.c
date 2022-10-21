@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 21:23:06 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/20 23:48:38 by meharit          ###   ########.fr       */
+/*   Created: 2022/10/20 22:08:12 by meharit           #+#    #+#             */
+/*   Updated: 2022/10/21 01:34:38 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include"libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+t_list	*ft_lstlast(t_list *lst)
 {
-	write(fd, &c, 1);
+	t_list *next;
+	t_list *help;
+
+	next = lst->next;
+	while (next->next != NULL)
+	{
+		help = lst; 
+		next = lst->next;
+		lst = next;
+	}
+	return (help);
 }

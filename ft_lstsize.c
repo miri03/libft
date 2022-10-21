@@ -1,31 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 00:29:36 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/20 22:53:22 by meharit          ###   ########.fr       */
+/*   Created: 2022/10/20 20:59:17 by meharit           #+#    #+#             */
+/*   Updated: 2022/10/20 23:33:29 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int ft_lstsize(t_list *lst)
 {
-	size_t			i;
-	unsigned char	*p1;
-	unsigned char	*p2;
+	int		len;
 
-	p1 = (unsigned char *)s1;
-	p2 = (unsigned char *)s2;
-	i = 0;
-	while (n > i)
+	len = 0;
+	while (lst)
 	{
-		if (p1[i] != p2[i])
-			return (p1[i] - p2[i]);
-		i++;
+		lst = lst->next;
+		len++;
 	}
-	return (0);
+	return (len);
 }
+
+/*
+#include"libft.h"
+#include<string.h>
+#include<stdio.h>
+int main()
+{
+	t_list *first= ft_lstnew(strdup("hey babygurl"));
+	t_list *mid= ft_lstnew(strdup("hey babygurl"));
+	t_list *last= ft_lstnew(strdup("hey babygurl"));
+	t_list **lst = &first;
+
+	first->next = mid;
+	mid->next = last;
+
+	printf("%d\n",ft_lstsize(first));
+}
+*/

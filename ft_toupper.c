@@ -6,15 +6,12 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 22:41:05 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/20 22:51:08 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/21 20:03:54 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-//	unsigned char	c;
-
-//	c = (unsigned char)i;
 	if (c >= 'a' && c <= 'z')
 		return (c -= 32);
 	return (c);

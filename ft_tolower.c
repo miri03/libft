@@ -6,16 +6,13 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 22:47:57 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/05 23:15:40 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/21 20:04:22 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int i)
 {
-	unsigned char	c;
-
-	c = (unsigned char) i;
-	if (c >= 'A' && c <= 'Z')
-		return (c += 32);
-	return (c);
+	if (i >= 'A' && i <= 'Z')
+		return (i += 32);
+	return (i);
 }

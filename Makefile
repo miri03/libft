@@ -16,6 +16,10 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
+RM = rm -f
+
+LIBC = ar -rc
+
 CFILES = ft_bzero.c \
 		 ft_atoi.c \
 	 	ft_isalpha.c \
@@ -51,8 +55,6 @@ CFILES = ft_bzero.c \
 	 	ft_putendl_fd.c \
 	 	ft_putnbr_fd.c \
 
-OBJ = $(CFILES:.c=.o)
-
 CBONUS = ft_lstnew.c \
 		 ft_lstadd_front.c \
 		 ft_lstsize.c \
@@ -60,17 +62,19 @@ CBONUS = ft_lstnew.c \
 		 ft_lstadd_back.c \
 		 ft_lstdelone.c \
 		 ft_lstclear.c \
+		 ft_lstiter.c \
+
+OBJ = $(CFILES:.c=.o)
 
 OBONUS = $(CBONUS:.c=.o)
 
-RM = rm -f
-LIBC = ar -rc
-
 all : $(NAME)
 
-bonus : $(NAME)
+bonus : $(OBONUS)
+
+$(OBONUS) : $(CBONUS)
 	$(CC) $(CFLAGS) -c $(CBONUS)
-	$(LIBC) $(NAME) $(OBONUS) 
+	$(LIBC) $(NAME) $(OBONUS)
 
 $(NAME) : $(OBJ)
 	$(LIBC) $(NAME) $(OBJ)

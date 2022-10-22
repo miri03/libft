@@ -1,44 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 20:59:17 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/21 23:34:19 by meharit          ###   ########.fr       */
+/*   Created: 2022/10/22 00:42:14 by meharit           #+#    #+#             */
+/*   Updated: 2022/10/22 02:52:15 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int ft_lstsize(t_list *lst)
+void ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int		len;
+	t_list	*last;
 
-	len = 0;
-	while (lst)
+	if (*lst == NULL)
+		*lst = new;
+	else
 	{
-		lst = lst->next;
-		len++;
+		last = ft_lstlast(*lst);
+		last->next = new;
 	}
-	return (len);
 }
-
-/*
-#include"libft.h"
-#include<string.h>
-#include<stdio.h>
-int main()
-{
-	t_list *first= ft_lstnew(strdup("hey babygurl"));
-	t_list *mid= ft_lstnew(strdup("hey babygurl"));
-	t_list *last= ft_lstnew(strdup("hey babygurl"));
-	t_list **lst = &first;
-
-	first->next = mid;
-	mid->next = last;
-
-	printf("%d\n",ft_lstsize(first));
-}
-*/

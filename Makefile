@@ -6,7 +6,7 @@
 #    By: meharit <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/08 20:54:32 by meharit           #+#    #+#              #
-#    Updated: 2022/10/21 01:13:28 by meharit          ###   ########.fr        #
+#    Updated: 2022/10/22 04:06:11 by meharit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,9 @@ CBONUS = ft_lstnew.c \
 		 ft_lstadd_front.c \
 		 ft_lstsize.c \
 		 ft_lstlast.c \
+		 ft_lstadd_back.c \
+		 ft_lstdelone.c \
+		 ft_lstclear.c \
 
 OBONUS = $(CBONUS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 16:27:47 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/18 20:30:31 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/24 00:08:16 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			*((char *)(dst + (len - 1))) = *((char *)(src + (len - 1)));
 			len--;
 		}
+
 	}
 	while (i < len)
 	{

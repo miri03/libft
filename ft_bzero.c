@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:38:41 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/15 16:56:45 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/24 00:05:44 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
-/*
-#include<stdio.h>
-int main()
-{
-	char str[] = "defgh";
-	ft_bzero(str, 5);
-	printf("%s\n",str);
-}*/

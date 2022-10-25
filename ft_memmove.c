@@ -17,7 +17,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (!dst && !src)
+	if (dst == NULL && src == NULL)
 		return (NULL);
 	if (dst > src)
 	{
@@ -34,4 +34,17 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		i++;
 	}
 	return (dst);
+}
+
+#include<stdio.h>
+int main()
+{
+	int i = 0;
+	int arr[] = {1,551,3,0};
+	int *a = ft_memmove(arr+1,arr,2*4);
+	while (i < 3)
+	{
+		printf("%d\n",a[i]);
+		i++;
+	}
 }

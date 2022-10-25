@@ -19,9 +19,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	size_t			i;
 
 	i = 0;
-	str = (unsigned char *)s; //unsigned to compare betw str&p ?
+	str = (unsigned char *)s;
 	p = (unsigned char) c;
 	while (str[i] != p && n > i)
 		i++;
 	if (n > i)
 		return ((void *)&str[i]);
+	return (NULL);
+}

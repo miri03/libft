@@ -24,17 +24,13 @@ int ft_lstsize(t_list *lst)
 	}
 	return (len);
 }
-
 /*
-#include"libft.h"
-#include<string.h>
 #include<stdio.h>
 int main()
 {
-	t_list *first= ft_lstnew(strdup("hey babygurl"));
-	t_list *mid= ft_lstnew(strdup("hey babygurl"));
-	t_list *last= ft_lstnew(strdup("hey babygurl"));
-	t_list **lst = &first;
+	t_list *first= ft_lstnew(ft_strdup("hey babygurl"));
+	t_list *mid= ft_lstnew(ft_strdup("hey babygurl"));
+	t_list *last= ft_lstnew(ft_strdup("hey babygurl"));
 
 	first->next = mid;
 	mid->next = last;

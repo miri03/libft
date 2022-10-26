@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 16:12:11 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/24 00:09:01 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/26 00:44:06 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	len = 0;
 	while (len < dstsize && dst[len])
 		len++;
-	if (len == dstsize) //(len-1)???
+	if (len == dstsize)
 		return (len + ft_strlen(src));
 	while (src[j] != '\0' && (len + 1 + j) < dstsize)
 	{

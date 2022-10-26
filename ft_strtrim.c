@@ -6,13 +6,13 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:19:48 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/18 21:15:25 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/26 01:31:38 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	isinset(char c, char const *set)
+static int	isinset(char c, char const *set)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	isinset(char c, char const *set)
 	return (0);
 }
 
-char	*alloc(char const *str, char const *set)
+static char	*alloc(char const *str, char const *set)
 {
 	int		i;
 	int		size;
@@ -59,7 +59,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		len;
 	int		start;
 
-	if (!s1 || !set)
+	if (s1 == NULL || set == NULL)
 		return (NULL);
 	len = ft_strlen(s1);
 	start = 0;

@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 18:46:32 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/18 22:33:16 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/25 23:13:01 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,11 +89,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**result;
 	int		size;
-//	int		j;
-//	int		i;
 
-//	i = 0;
-//	j = 0;
 	size = ft_size(s, c);
 	result = (char **)malloc(sizeof(char *) * (size + 1));
 	if (s == NULL || result == NULL)

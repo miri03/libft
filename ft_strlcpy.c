@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:33:22 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/08 21:54:18 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/26 00:30:04 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcpy(char	*dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
-	if (dstsize)
+	if (dstsize > 0)
 	{		
 		while (src[i] != '\0' && i < dstsize - 1)
 		{

@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:23:03 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/18 16:58:53 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/26 01:13:38 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (s == 0)
 		return (NULL);
-	if (!*s || start >= ft_strlen(s))
+	if (*s == 0 || start >= ft_strlen(s))
 		return (ft_strdup(""));
 	if (len < ft_strlen(s) - start)
 		sub = (char *)malloc(sizeof(char) * (len + 1));

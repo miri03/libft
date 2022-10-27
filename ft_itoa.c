@@ -6,13 +6,13 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 00:58:27 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/25 23:12:39 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/27 04:33:09 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	ft_size(long n)
+static int	ft_size(long n)
 {
 	int	size;
 

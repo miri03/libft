@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 17:38:41 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/27 03:53:01 by meharit          ###   ########.fr       */
+/*   Created: 2022/10/22 03:22:42 by meharit           #+#    #+#             */
+/*   Updated: 2022/10/27 05:01:01 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	char	*ptr;
-	size_t	i;
+	t_list	*temp;
 
-	ptr = (char *) s;
-	i = 0;
-	while (n > i)
+	if (lst == NULL || del == NULL)
+		return ;
+	while (*lst)
 	{
-		ptr[i] = 0;
-		i++;
+		temp = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = temp;
 	}
 }

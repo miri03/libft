@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 18:46:32 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/25 23:13:01 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/27 04:45:56 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_size(char const *s, char c)
 
 	word = 0;
 	i = 0;
-	if (!s)
+	if (s == NULL)
 		return (0);
 	while (s[i])
 	{	
@@ -49,7 +49,7 @@ static char	*ft_word(char const *s, int size)
 	return (word);
 }
 
-void	error_free(char **result, int i)
+static void	error_free(char **result, int i)
 {
 	while (i >= 0)
 	{
@@ -58,7 +58,7 @@ void	error_free(char **result, int i)
 	}
 }
 
-void	ft_alloc(char **result, char const *s, char c, int size)
+static void	ft_alloc(char **result, char const *s, char c, int size)
 {
 	int		alloc;
 	int		i;

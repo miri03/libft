@@ -6,7 +6,7 @@
 #    By: meharit <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/08 20:54:32 by meharit           #+#    #+#              #
-#    Updated: 2022/10/26 02:25:56 by meharit          ###   ########.fr        #
+#    Updated: 2022/10/27 05:09:47 by meharit          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,14 +55,14 @@ CFILES = ft_bzero.c \
 	 	ft_putendl_fd.c \
 	 	ft_putnbr_fd.c \
 
-CBONUS = ft_lstnew.c \
-		 ft_lstadd_front.c \
-		 ft_lstsize.c \
-		 ft_lstlast.c \
-		 ft_lstadd_back.c \
-		 ft_lstdelone.c \
-		 ft_lstclear.c \
-		 ft_lstiter.c \
+CBONUS = ft_lstnew_bonus.c \
+		 ft_lstadd_front_bonus.c \
+		 ft_lstsize_bonus.c \
+		 ft_lstlast_bonus.c \
+		 ft_lstadd_back_bonus.c \
+		 ft_lstdelone_bonus.c \
+		 ft_lstclear_bonus.c \
+		 ft_lstiter_bonus.c \
 
 OBJ = $(CFILES:.c=.o)
 

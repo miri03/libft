@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 22:31:10 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/22 03:44:27 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/27 05:06:38 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 # include<stdlib.h>
 # include <unistd.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
-	void	*content;
-	struct	s_list *next;
+	void			*content;
+	struct s_list	*next;
 }			t_list;
 
 void	ft_bzero(void *s, size_t n);

@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 20:36:35 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/18 20:37:21 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/27 04:43:12 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (s)
+	if (s != NULL)
 		write(fd, s, ft_strlen(s));
 }

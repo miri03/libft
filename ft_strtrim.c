@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:19:48 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/28 22:49:00 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/29 20:10:46 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ static char	*alloc(char const *str, char const *set)
 	len = ft_strlen(str) - 1;
 	size = 0;
 	i = 0;
-	while (isinset(str[i], set) && str[i])
+	while (str[i] && isinset(str[i], set))
 	{
 		size++;
 		i++;
 	}
-	while (isinset(str[len], set) && str[i])
+	while (str[i] && isinset(str[len], set))
 	{
 		size++;
 		len--;
@@ -61,6 +61,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (s1 == NULL || set == NULL)
 		return (NULL);
+	if (*s1 == 0)
+		return (ft_strdup(""));
 	len = ft_strlen(s1);
 	start = 0;
 	ptr = alloc(s1, set);
@@ -72,11 +74,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		len--;
 	i = 0;
 	while (start < len)
-	{
-		ptr[i] = s1[start];
-		start++;
-		i++;
-	}
+		ptr[i++] = s1[start++];
 	ptr[i] = '\0';
 	return (ptr);
 }

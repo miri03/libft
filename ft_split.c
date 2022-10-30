@@ -6,7 +6,7 @@
 /*   By: meharit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 18:46:32 by meharit           #+#    #+#             */
-/*   Updated: 2022/10/28 21:59:23 by meharit          ###   ########.fr       */
+/*   Updated: 2022/10/29 20:37:39 by meharit          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ static char	*ft_word(char const *s, int size)
 
 	i = 0;
 	word = (char *)malloc(sizeof(char) * (size + 1));
+	if (word == NULL)
+		return (NULL);
 	while (size > i)
 	{
 		word[i] = s[i];
@@ -78,6 +80,7 @@ static void	ft_alloc(char **result, char const *s, char c, int size)
 		{
 			error_free(result, i);
 			free(result);
+			return ;
 		}
 		i++;
 		j += alloc;
@@ -90,13 +93,12 @@ char	**ft_split(char const *s, char c)
 	char	**result;
 	int		size;
 
+	if (s == NULL)
+		return (NULL);
 	size = ft_size(s, c);
 	result = (char **)malloc(sizeof(char *) * (size + 1));
-	if (s == NULL || result == NULL)
-	{
-		free(result);
+	if (result == NULL)
 		return (NULL);
-	}
 	ft_alloc(result, s, c, size);
 	return (result);
 }
